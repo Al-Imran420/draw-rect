@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using RestAPI.Models;
 
 namespace RestAPI.SVGData
@@ -12,42 +13,39 @@ namespace RestAPI.SVGData
             new SVG()
             {
                 Id = Guid.NewGuid(),
-                XCord = 250,
-                YCord = 200,
-            },
-            new SVG()
-            {
-                Id = Guid.NewGuid(),
-                XCord = 350,
-                YCord = 300,
+                XCord = 600,
+                YCord = 400,
             }
         };
 
-
-
-        public SVG AddSVG(SVG svg)
+        public List<SVG> GetAllSVG()
         {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteSVG(SVG svg)
-        {
-            throw new NotImplementedException();
-        }
-
-        public SVG EditSVG(SVG svg)
-        {
-            throw new NotImplementedException();
+            return defaultsvg;
         }
 
         public SVG GetSVG(Guid id)
         {
-            throw new NotImplementedException();
+            return defaultsvg.SingleOrDefault(x => x.Id == id);
         }
 
-        public List<SVG> GetSVG()
+        public SVG AddSVG(SVG svg)
         {
-            return defaultsvg;
+            svg.Id = Guid.NewGuid();
+            defaultsvg.Add(svg);
+            return svg;
+        }
+
+        public SVG EditSVG(SVG svg)
+        {
+            var exestingSVG = GetSVG(svg.Id);
+            exestingSVG.XCord = svg.XCord;
+            exestingSVG.YCord = svg.YCord;
+            return svg;
+        }
+
+        public void DeleteSVG(SVG svg)
+        {
+            defaultsvg.Remove(svg);
         }
     }
 }

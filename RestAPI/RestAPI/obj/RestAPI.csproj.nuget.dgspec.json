@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/alimran/Projects/RestAPI/RestAPI/RestAPI.csproj": {}
+    "/Users/alimran/Desktop/Interview/draw-rect/RestAPI/RestAPI/RestAPI.csproj": {}
   },
   "projects": {
-    "/Users/alimran/Projects/RestAPI/RestAPI/RestAPI.csproj": {
+    "/Users/alimran/Desktop/Interview/draw-rect/RestAPI/RestAPI/RestAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/alimran/Projects/RestAPI/RestAPI/RestAPI.csproj",
+        "projectUniqueName": "/Users/alimran/Desktop/Interview/draw-rect/RestAPI/RestAPI/RestAPI.csproj",
         "projectName": "RestAPI",
-        "projectPath": "/Users/alimran/Projects/RestAPI/RestAPI/RestAPI.csproj",
+        "projectPath": "/Users/alimran/Desktop/Interview/draw-rect/RestAPI/RestAPI/RestAPI.csproj",
         "packagesPath": "/Users/alimran/.nuget/packages/",
-        "outputPath": "/Users/alimran/Projects/RestAPI/RestAPI/obj/",
+        "outputPath": "/Users/alimran/Desktop/Interview/draw-rect/RestAPI/RestAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/alimran/.config/NuGet/NuGet.Config"
@@ -37,6 +37,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

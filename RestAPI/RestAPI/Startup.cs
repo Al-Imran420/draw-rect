@@ -26,6 +26,12 @@ namespace RestAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Cors
+            services.AddCors(option =>
+            {
+                option.AddPolicy("MyCorsImplementationPolicy", builder => builder.WithOrigins("*"));
+            });
+
             services.AddControllers();
 
             services.AddSingleton<SVGdata, MockSVGdata>();
@@ -42,6 +48,8 @@ namespace RestAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("MyCorsImplementationPolicy");
 
             app.UseAuthorization();
 

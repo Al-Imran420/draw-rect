@@ -6,14 +6,14 @@ namespace RestAPI.SVGData
 {
     public interface SVGdata
     {
-        List<SVG> GetSVG();
+        List<SVG> GetAllSVG();
 
         SVG GetSVG(Guid id);
+
+        SVG EditSVG(SVG svg);
 
         SVG AddSVG(SVG svg);
 
         void DeleteSVG(SVG svg);
-
-        SVG EditSVG(SVG svg);
     }
 }
