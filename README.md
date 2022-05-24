@@ -7,7 +7,7 @@
 ## Used Devices and Tooles
 * Apple MacBook Air (M1)
 * Visual Studio Code
-* Visual Studio
+* Visual Studio (2019)
 * Postman
 
 ## How to Start/Check
