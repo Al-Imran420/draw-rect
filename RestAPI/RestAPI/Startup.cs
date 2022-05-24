@@ -27,9 +27,15 @@ namespace RestAPI
         public void ConfigureServices(IServiceCollection services)
         {
             // Cors
-            services.AddCors(option =>
+            services.AddCors(options =>
             {
-                option.AddPolicy("MyCorsImplementationPolicy", builder => builder.WithOrigins("*"));
+                options.AddPolicy("CorsePolicy",
+                    policy =>
+                    {
+                        policy.WithOrigins("*")
+                           .AllowAnyMethod()
+                           .AllowAnyHeader();
+                    });
             });
 
             services.AddControllers();
@@ -49,7 +55,7 @@ namespace RestAPI
 
             app.UseRouting();
 
-            app.UseCors("MyCorsImplementationPolicy");
+            app.UseCors("CorsePolicy");
 
             app.UseAuthorization();
 

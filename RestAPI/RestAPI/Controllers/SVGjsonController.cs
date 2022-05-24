@@ -20,18 +20,18 @@ namespace RestAPI.Controllers
         }
 
         // GET: all SVG data
+        [EnableCors("CorsePolicy")]
         [HttpGet]
         [Route("api/[controller]/all")]
-        [EnableCors("MyCorsImplementationPolicy")]
         public IActionResult GetAllSVG()
         {
             return Ok(_svgData.GetAllSVG());
         }
 
         // GET: SVG data by id
+        [EnableCors("CorsePolicy")]
         [HttpGet]
         [Route("api/[controller]/{id}")]
-        [EnableCors("MyCorsImplementationPolicy")]
         public IActionResult GetSVG(Guid id)
         {
             var SVG = _svgData.GetSVG(id);
@@ -44,9 +44,9 @@ namespace RestAPI.Controllers
         }
 
         // POST: Create SVG data
+        [EnableCors("CorsePolicy")]
         [HttpPost]
         [Route("api/[controller]/create")]
-        [EnableCors("MyCorsImplementationPolicy")]
         public IActionResult AddSVG(SVG svg)
         {
             _svgData.AddSVG(svg);
@@ -54,9 +54,9 @@ namespace RestAPI.Controllers
         }
 
         // DELETE: SVG data by id
+        [EnableCors("CorsePolicy")]
         [HttpDelete]
         [Route("api/[controller]/{id}")]
-        [EnableCors("MyCorsImplementationPolicy")]
         public IActionResult DeleteSVG(Guid id)
         {
             var SVG = _svgData.GetSVG(id);
@@ -70,9 +70,9 @@ namespace RestAPI.Controllers
         }
 
         // PATCH: Update SVG data
+        [EnableCors("CorsePolicy")]
         [HttpPatch]
         [Route("api/[controller]/{id}")]
-        [EnableCors("MyCorsImplementationPolicy")]
         public IActionResult EditSVG(Guid id, SVG svg)
         {
             var exestingSVG = _svgData.GetSVG(id);

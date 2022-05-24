@@ -63,8 +63,8 @@ export class ResizableSvgComponent implements OnInit, AfterViewInit {
 
     // Call update API
     let body = {
-      xCord:this.width,
-      yCord:this.height
+      xCord: Math.floor(this.width),
+      yCord: Math.floor(this.height)
     }
     console.log(body);
     this.service.updateSvg(this.Id, body).subscribe((res:any)=>{
